@@ -7,12 +7,21 @@
 package bibliotecaejercicio;
 
 import bibliotecaejercicio.controller.BibliotecaViewController;
+import bibliotecaejercicio.controller.MenuViewController;
 import bibliotecaejercicio.controller.RootLayoutController;
+import bibliotecaejercicio.controller.UsuarioViewController;
+import bibliotecaejercicio.model.Ejemplar;
+import bibliotecaejercicio.model.Libro;
+import bibliotecaejercicio.model.Usuario;
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -25,8 +34,24 @@ public class MainApp extends Application {
     
     private Stage primaryStage;
     private BorderPane rootLayout;
-   //private ObservableList<Books> bookList = FXCollections.observableArrayList();
+    @FXML
+    private TabPane tabPaneBiblioteca; 
     
+    private ObservableList<Libro> listaLibros = FXCollections.observableArrayList();
+    private ObservableList<Usuario> listaUsuarios = FXCollections.observableArrayList();
+    private ObservableList<Ejemplar> listaEjemplares = FXCollections.observableArrayList(); 
+    
+    public ObservableList<Libro> getLibrosList() {
+        return listaLibros;
+    }
+    
+    public ObservableList<Usuario> getUsuariosList() {
+        return listaUsuarios;
+    }
+    
+     public ObservableList<Ejemplar> getEjemplaresList() {
+        return listaEjemplares;
+    }
     
     @Override
     public void start(Stage stage) {
@@ -44,8 +69,7 @@ public class MainApp extends Application {
        }catch(IOException e){
           e.printStackTrace();
        }
-       showBibliotecaList();
-   
+       showMenu();
     }
 
     /**
@@ -55,17 +79,45 @@ public class MainApp extends Application {
         launch(args);
     }
     
-    
     public void showBibliotecaList(){
             try{
                 FXMLLoader bibliotecaLoader = new FXMLLoader(MainApp.class.getResource("view/BibliotecaView.fxml"));
                 AnchorPane bookList = (AnchorPane)bibliotecaLoader.load();
                 BibliotecaViewController controller = bibliotecaLoader.getController();
-                rootLayout.setCenter(bookList);   
+                controller.setMainApp(this);
+                tabPaneBiblioteca.getTabs().get(1).setContent(bookList);  
+             //   rootLayout.setCenter(bookList);   
             }catch(IOException e){
             e.printStackTrace();
             }
     }
+    
+      public void showUsuariosList(){
+            try{
+                FXMLLoader usersLoader = new FXMLLoader(MainApp.class.getResource("view/UsuarioView.fxml"));
+                AnchorPane usersList = (AnchorPane)usersLoader.load();
+                UsuarioViewController controller = usersLoader.getController();
+                controller.setMainApp(this);
+                tabPaneBiblioteca.getTabs().get(0).setContent(usersList);
+               // rootLayout.setCenter(tabPaneBiblioteca);   
+            }catch(IOException e){
+            e.printStackTrace();
+            }
+    }
+       public void showMenu(){
+            try{
+                FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("view/MenuView.fxml"));
+                tabPaneBiblioteca = (TabPane) loader.load();
+                MenuViewController controller = loader.getController();
+                rootLayout.setCenter(tabPaneBiblioteca);   
+                showUsuariosList();
+                showBibliotecaList();
+            }catch(IOException e){
+            e.printStackTrace();
+            }
+    }
+      
+    
     
     public void loadBooks(){
        /* bookList.add(new Books("1","Harry Potter, Las Reliquias De La Muerte", "1995"));

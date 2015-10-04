@@ -15,17 +15,17 @@ import javafx.fxml.Initializable;
  *
  * @author Omar
  */
-public class BibliotecaViewController implements Initializable {
-  
-      private MainApp main;
+public class UsuarioViewController implements Initializable {
+
+     private MainApp main;
 
     public void setMainApp(MainApp main) {
         this.main = main;
     }
     
-    public void Exit(){
-      System.exit(0);
-    }
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

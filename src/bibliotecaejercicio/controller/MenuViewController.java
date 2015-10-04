@@ -5,7 +5,6 @@
  */
 package bibliotecaejercicio.controller;
 
-import bibliotecaejercicio.MainApp;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -15,18 +14,11 @@ import javafx.fxml.Initializable;
  *
  * @author Omar
  */
-public class BibliotecaViewController implements Initializable {
-  
-      private MainApp main;
+public class MenuViewController implements Initializable {
 
-    public void setMainApp(MainApp main) {
-        this.main = main;
-    }
-    
-    public void Exit(){
-      System.exit(0);
-    }
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bibliotecaejercicio.controller.RootLayoutController">
+<BorderPane id="AnchorPane" prefHeight="470.0" prefWidth="610.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bibliotecaejercicio.controller.RootLayoutController">
      <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -28,4 +28,7 @@
         </menus>
       </MenuBar>
    </top>
+   <center>
+      <TabPane fx:id="tabPaneBiblioteca" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
