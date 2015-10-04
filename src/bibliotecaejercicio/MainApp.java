@@ -7,6 +7,7 @@
 package bibliotecaejercicio;
 
 import bibliotecaejercicio.controller.BibliotecaViewController;
+import bibliotecaejercicio.controller.RootLayoutController;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -33,17 +34,17 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("Biblioteca");
         
        try{
-          FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("view/PrimaryStageFXML.fxml"));
-          rootLayout =(BorderPane)loader.load();
-          
-          
+          FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("view/RootLayout.fxml"));
+        rootLayout =(BorderPane)loader.load(); 
         Scene scene = new Scene(rootLayout);
+        RootLayoutController controller = loader.getController();
+        controller.setMainApp(this);
         primaryStage.setScene(scene);
-        primaryStage.show();
-                          
+        primaryStage.show();                     
        }catch(IOException e){
           e.printStackTrace();
        }
+       showBibliotecaList();
    
     }
 
@@ -55,11 +56,11 @@ public class MainApp extends Application {
     }
     
     
-    public void showBooksList(){
+    public void showBibliotecaList(){
             try{
-                FXMLLoader booksLoader = new FXMLLoader(MainApp.class.getResource("view/Books.fxml"));
-                AnchorPane bookList = (AnchorPane)booksLoader.load();
-                BibliotecaViewController controller = booksLoader.getController();
+                FXMLLoader bibliotecaLoader = new FXMLLoader(MainApp.class.getResource("view/BibliotecaView.fxml"));
+                AnchorPane bookList = (AnchorPane)bibliotecaLoader.load();
+                BibliotecaViewController controller = bibliotecaLoader.getController();
                 rootLayout.setCenter(bookList);   
             }catch(IOException e){
             e.printStackTrace();
@@ -71,11 +72,4 @@ public class MainApp extends Application {
         bookList.add(new Books("2","Aprendiendo UML en 24 horas", "1995"));
         bookList.add(new Books("3","Monos y Micos", "1995")); */
     }       
-
-    public ObservableList<Books> getBookList() {
-        return bookList;
-    }
-    
-    
-    
 }
