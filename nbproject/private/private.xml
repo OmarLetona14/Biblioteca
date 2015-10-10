@@ -5,26 +5,17 @@
             <url>src/bibliotecaejercicio/MainApp.java</url>
             <bookmark id="5">
                 <name/>
-                <line>120</line>
+                <line>116</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/helpers/DBHelper.java</file>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Libro.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/UsuarioViewController.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/view/BibliotecaView.fxml</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Usuario.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/view/MenuView.fxml</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Ejemplar.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/view/UsuarioView.fxml</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Autor.java</file>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/MainApp.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/MenuViewController.java</file>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/BibliotecaViewController.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/RootLayoutController.java</file>
-            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/view/RootLayout.fxml</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="473.0" prefWidth="350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bibliotecaejercicio.controller.EditarAgregarLibroController">
+   <children>
+      <Label layoutX="75.0" layoutY="25.0" prefHeight="29.0" prefWidth="136.0" text="Nuevo libro" textFill="#f50606" AnchorPane.leftAnchor="75.0" />
+      <Label layoutX="75.0" layoutY="71.0" prefHeight="17.0" prefWidth="54.0" text="Título" />
+      <Label layoutX="75.0" layoutY="121.0" prefHeight="17.0" prefWidth="41.0" text="Autor" />
+      <Label layoutX="75.0" layoutY="172.0" text="Editorial" />
+      <Label layoutX="75.0" layoutY="221.0" text="ISBN" />
+      <Label layoutX="74.0" layoutY="270.0" text="Páginas" />
+      <TextField fx:id="txtTitulo" layoutX="137.0" layoutY="67.0" />
+      <TextField fx:id="txtAutor" layoutX="137.0" layoutY="117.0" />
+      <TextField fx:id="txtEditorial" layoutX="137.0" layoutY="168.0" />
+      <TextField fx:id="txtISBN" layoutX="137.0" layoutY="217.0" />
+      <TextField fx:id="txtPaginas" layoutX="137.0" layoutY="266.0" />
+      <Button fx:id="btnCancelar" layoutX="237.0" layoutY="387.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Cancelar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button fx:id="btnAceptar" layoutX="161.0" layoutY="387.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Aceptar" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="90.0" />
+      <Label layoutX="74.0" layoutY="320.0" text="Localización" />
+      <TextField fx:id="txtLocalizacion" layoutX="153.0" layoutY="316.0" />
+   </children>
+</AnchorPane>

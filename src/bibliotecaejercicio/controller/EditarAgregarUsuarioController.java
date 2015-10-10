@@ -5,10 +5,8 @@
  */
 package bibliotecaejercicio.controller;
 
-import bibliotecaejercicio.MainApp;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -16,20 +14,11 @@ import javafx.fxml.Initializable;
  *
  * @author Omar
  */
-public class UsuarioViewController implements Initializable {
+public class EditarAgregarUsuarioController implements Initializable {
 
-     private MainApp main;
-
-    public void setMainApp(MainApp main) {
-        this.main = main;
-    }
-    
-    @FXML
-    public void Exit(){
-      System.exit(0);
-    }
-    
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

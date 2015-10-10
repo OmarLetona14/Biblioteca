@@ -7,9 +7,12 @@
 package bibliotecaejercicio;
 
 import bibliotecaejercicio.controller.BibliotecaViewController;
+import bibliotecaejercicio.controller.EditarAgregarLibroController;
 import bibliotecaejercicio.controller.MenuViewController;
 import bibliotecaejercicio.controller.RootLayoutController;
 import bibliotecaejercicio.controller.UsuarioViewController;
+import bibliotecaejercicio.helpers.Dialogs;
+import bibliotecaejercicio.model.Autor;
 import bibliotecaejercicio.model.Ejemplar;
 import bibliotecaejercicio.model.Libro;
 import bibliotecaejercicio.model.Usuario;
@@ -24,6 +27,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -34,12 +38,14 @@ public class MainApp extends Application {
     
     private Stage primaryStage;
     private BorderPane rootLayout;
+     public enum CRUDOperation {None, Create, Read, Update, Delete};
     @FXML
-    private TabPane tabPaneBiblioteca; 
-    
+    private TabPane tabPaneBiblioteca;  
     private ObservableList<Libro> listaLibros = FXCollections.observableArrayList();
     private ObservableList<Usuario> listaUsuarios = FXCollections.observableArrayList();
     private ObservableList<Ejemplar> listaEjemplares = FXCollections.observableArrayList(); 
+    public Autor autor;
+    public Ejemplar ejemplar;
     
     public ObservableList<Libro> getLibrosList() {
         return listaLibros;
@@ -52,12 +58,13 @@ public class MainApp extends Application {
      public ObservableList<Ejemplar> getEjemplaresList() {
         return listaEjemplares;
     }
+     
+    
     
     @Override
     public void start(Stage stage) {
         this.primaryStage = stage;
-        this.primaryStage.setTitle("Biblioteca");
-        
+        this.primaryStage.setTitle("Biblioteca");      
        try{
           FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("view/RootLayout.fxml"));
         rootLayout =(BorderPane)loader.load(); 
@@ -72,9 +79,6 @@ public class MainApp extends Application {
        showMenu();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
@@ -86,7 +90,6 @@ public class MainApp extends Application {
                 BibliotecaViewController controller = bibliotecaLoader.getController();
                 controller.setMainApp(this);
                 tabPaneBiblioteca.getTabs().get(1).setContent(bookList);  
-             //   rootLayout.setCenter(bookList);   
             }catch(IOException e){
             e.printStackTrace();
             }
@@ -99,7 +102,6 @@ public class MainApp extends Application {
                 UsuarioViewController controller = usersLoader.getController();
                 controller.setMainApp(this);
                 tabPaneBiblioteca.getTabs().get(0).setContent(usersList);
-               // rootLayout.setCenter(tabPaneBiblioteca);   
             }catch(IOException e){
             e.printStackTrace();
             }
@@ -116,12 +118,35 @@ public class MainApp extends Application {
             e.printStackTrace();
             }
     }
-      
-    
-    
-    public void loadBooks(){
-       /* bookList.add(new Books("1","Harry Potter, Las Reliquias De La Muerte", "1995"));
-        bookList.add(new Books("2","Aprendiendo UML en 24 horas", "1995"));
-        bookList.add(new Books("3","Monos y Micos", "1995")); */
-    }       
+       
+       
+        public boolean ingresarEditarLibro(Libro libro, CRUDOperation operacion){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("views/EditarAgregarLibro.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Editar Libro");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene escena = new Scene(page);
+            dialogStage.setScene(escena);
+            dialogStage.setResizable(false);
+            EditarAgregarLibroController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setOperacion(operacion);
+            controller.setLibro(libro);
+            
+            dialogStage.showAndWait();
+            
+            return controller.fuePresionadoOk();
+           }
+        catch(Exception e){
+            e.printStackTrace();
+            Alert error = Dialogs.getErrorDialog(Alert.AlertType.ERROR, "Biblioteca System", null, "Error al cargar el archivo FXML", e);
+            error.showAndWait();
+            return false;
+        }
+    }
+           
 }
