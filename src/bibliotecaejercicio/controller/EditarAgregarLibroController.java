@@ -8,6 +8,8 @@ package bibliotecaejercicio.controller;
 import bibliotecaejercicio.MainApp;
 import bibliotecaejercicio.MainApp.CRUDOperation;
 import bibliotecaejercicio.helpers.Dialogs;
+import bibliotecaejercicio.model.Autor;
+import bibliotecaejercicio.model.Ejemplar;
 import bibliotecaejercicio.model.Libro;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -67,6 +69,7 @@ public class EditarAgregarLibroController implements Initializable {
         txtEditorial.setText(libro.getEditorial());
         txtISBN.setText(libro.getISBN());
         txtPaginas.setText(libro.getISBN());     
+       txtLocalizacion.setText(libro.getEjemplar().getLocalizacion());
     } 
        public boolean fuePresionadoOk(){
         return this.presionadoOk;
@@ -84,7 +87,7 @@ public class EditarAgregarLibroController implements Initializable {
             libro.setEditorial(txtEditorial.getText());
             libro.setISBN(txtISBN.getText());
             libro.setPaginas(txtPaginas.getText());
-            libro.getEjemplar().setLocalizacion(txtLocalizacion.getText());
+        libro.getEjemplar().setLocalizacion(txtLocalizacion.getText());
             if (operacion.equals(CRUDOperation.Create)){
                 presionadoOk = libro.insertarLibro(libro);
             }

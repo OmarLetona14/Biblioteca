@@ -12,6 +12,7 @@ package bibliotecaejercicio.model;
  */
 public class Autor {
     
+    private String idAutor;
     private String nombre;
 
     public String getNombre() {
@@ -25,7 +26,21 @@ public class Autor {
     public Autor(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+
+    public String getIdAutor() {
+        return idAutor;
+    }
+
+    public void setIdAutor(String idAutor) {
+        this.idAutor = idAutor;
+    }
+
+    public Autor(String idAutor, String nombre) {
+        this.idAutor = idAutor;
+        this.nombre = nombre;
+    }
+
+    public Autor() {
+    } 
             
 }

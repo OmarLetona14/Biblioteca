@@ -6,6 +6,7 @@
 package bibliotecaejercicio.controller;
 
 import bibliotecaejercicio.MainApp;
+import bibliotecaejercicio.MainApp.CRUDOperation;
 import bibliotecaejercicio.helpers.Dialogs;
 import bibliotecaejercicio.model.Autor;
 import bibliotecaejercicio.model.Libro;

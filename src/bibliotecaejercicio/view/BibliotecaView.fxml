@@ -47,9 +47,9 @@
                                    </columns>
                                  </TableView>
                                  <Button fx:id="btnCancelar" layoutX="305.0" layoutY="353.0" mnemonicParsing="false" onAction="#Exit" prefHeight="25.0" prefWidth="75.0" text="Cancelar" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="353.0" />
-                  <Button fx:id="btnEliminar" layoutX="242.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Eliminar" />
-                  <Button fx:id="btnEditar" layoutX="162.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Editar" />
-                  <Button fx:id="btnNuevo" layoutX="82.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Nuevo" />
+                  <Button fx:id="btnEliminar" layoutX="242.0" layoutY="354.0" mnemonicParsing="false" onAction="#eliminarLibro" prefHeight="25.0" prefWidth="75.0" text="Eliminar" />
+                  <Button fx:id="btnEditar" layoutX="162.0" layoutY="354.0" mnemonicParsing="false" onAction="#editarLibro" prefHeight="25.0" prefWidth="75.0" text="Editar" />
+                  <Button fx:id="btnNuevo" layoutX="82.0" layoutY="354.0" mnemonicParsing="false" onAction="#ingresarLibro" prefHeight="25.0" prefWidth="75.0" text="Nuevo" />
                               </children>
                            </AnchorPane>
                        </items>

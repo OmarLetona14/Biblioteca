@@ -27,14 +27,14 @@ paginas VARCHAR(5) NOT NULL,
 GO
 
 CREATE TABLE LibroEscrito(
-idAutor INT FOREIGN KEY REFERENCES Autor (idAutor),
-idLibro INT FOREIGN KEY REFERENCES Libro(idLibro),
+idAutor INT IDENTITY FOREIGN KEY REFERENCES Autor (idAutor),
+idLibro INT IDENTITY FOREIGN KEY REFERENCES Libro(idLibro),
 ) 
 GO
 CREATE TABLE Ejemplar(
 idEjemplar INT IDENTITY (1,1) PRIMARY KEY,
 localizacion VARCHAR (50) NOT NULL,
-idLibro INT FOREIGN KEY REFERENCES Libro(idLibro),
+idLibro INT IDENTITY FOREIGN KEY REFERENCES Libro(idLibro),
 )
 GO
 CREATE TABLE prestamo(
@@ -65,7 +65,7 @@ WHERE l.idLibro = le.idLibro AND e.idLibro = l.idLibro AND le.idAutor = a.idAuto
 SELECT * FROM LibroEscrito
 
 INSERT INTO LibroEscrito
-VALUES (1,1)
+VALUES (3,3)
 
 SELECT * FROM Libro
 
@@ -73,12 +73,12 @@ SELECT * FROM Autor
 
 SELECT * FROM Ejemplar
 
-INSERT INTO Libro 
-VALUES ('Caballo de troya', '534ANFID', 'Piedra Santa', '252')
+INSERT INTO Libro ("titulo", "isbn", "editorial", "paginas" )
+VALUES ('Harry Potter', 'SFDSFD5', 'Piedra Santa', '452')
 
 
 INSERT INTO Ejemplar
-VALUES ('Quinta fila, segunda columna', 1)
+VALUES ('DFGDG-25', 3)
 
-INSERT INTO Autor
-VALUES ('J. R. George')
+INSERT INTO Autor(nombre )
+VALUES ('José Milla')

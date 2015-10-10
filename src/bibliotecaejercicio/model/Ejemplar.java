@@ -24,4 +24,9 @@ public class Ejemplar {
     public Ejemplar(String localizacion) {
         this.localizacion = localizacion;
     }
+
+    public Ejemplar() {
+    }
+    
+    
 }

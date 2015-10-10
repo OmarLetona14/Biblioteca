@@ -123,7 +123,7 @@ public class MainApp extends Application {
         public boolean ingresarEditarLibro(Libro libro, CRUDOperation operacion){
         try{
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("views/EditarAgregarLibro.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/EditarAgregarLibro.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Editar Libro");
