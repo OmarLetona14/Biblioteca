@@ -55,7 +55,8 @@ INSERT INTO Usuario VALUES ('Pablo Yaxon', '48584121', 'Tac Tic, Coban')
 INSERT INTO Usuario VALUES ('Eddie Flores', '56251232', 'Zona 10')
 INSERT INTO Usuario VALUES ('Antonio Escobar', '45285522', 'Zona 9')
 INSERT INTO Usuario VALUES ('Andrea Escobar', '66521478', 'Zona 14')
-INSERT INTO Usuario VALUES ('Maria Fernanda Guidel', '45218522', 'Zona 10')
+INSERT INTO Usuario (nombre, telefono, direccion)
+VALUES ('Maria Fernanda Chen', '546345645', 'Zona 15')
 
 
 SELECT l.titulo, l.editorial, l.isbn, l.paginas, a.nombre , e.localizacion   
@@ -66,6 +67,8 @@ SELECT * FROM LibroEscrito
 
 INSERT INTO LibroEscrito
 VALUES (3,3)
+
+SELECT * FROM Usuario
 
 SELECT * FROM Libro
 
@@ -83,6 +86,5 @@ VALUES ('DFGDG-25', 3)
 INSERT INTO Autor(nombre )
 VALUES ('José Milla')
 
-Update Ejemplar 
-SET localizacion = 'Tres millas'
-WHERE idLibro = 2
+DELETE Autor 
+Where 
