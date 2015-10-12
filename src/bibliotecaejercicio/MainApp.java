@@ -8,6 +8,7 @@ package bibliotecaejercicio;
 
 import bibliotecaejercicio.controller.BibliotecaViewController;
 import bibliotecaejercicio.controller.EditarAgregarLibroController;
+import bibliotecaejercicio.controller.EditarAgregarUsuarioController;
 import bibliotecaejercicio.controller.MenuViewController;
 import bibliotecaejercicio.controller.RootLayoutController;
 import bibliotecaejercicio.controller.UsuarioViewController;
@@ -136,6 +137,35 @@ public class MainApp extends Application {
             controller.setDialogStage(dialogStage);
             controller.setOperacion(operacion);
             controller.setLibro(libro);
+            
+            dialogStage.showAndWait();
+            
+            return controller.fuePresionadoOk();
+           }
+        catch(Exception e){
+            e.printStackTrace();
+            Alert error = Dialogs.getErrorDialog(Alert.AlertType.ERROR, "Biblioteca System", null, "Error al cargar el archivo FXML", e);
+            error.showAndWait();
+            return false;
+        }
+    }
+        
+         public boolean ingresarEditarUsuario(Usuario usuario, CRUDOperation operacion){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/EditarAgregarUsuario.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Editar Usuario");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene escena = new Scene(page);
+            dialogStage.setScene(escena);
+            dialogStage.setResizable(false);
+            EditarAgregarUsuarioController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setOperacion(operacion);
+            controller.setUsuario(usuario);
             
             dialogStage.showAndWait();
             

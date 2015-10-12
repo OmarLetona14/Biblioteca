@@ -82,3 +82,7 @@ VALUES ('DFGDG-25', 3)
 
 INSERT INTO Autor(nombre )
 VALUES ('José Milla')
+
+Update Ejemplar 
+SET localizacion = 'Tres millas'
+WHERE idLibro = 2

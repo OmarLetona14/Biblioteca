@@ -79,7 +79,7 @@ public class EditarAgregarLibroController implements Initializable {
         // TODO
     }    
     
-     @FXML
+    @FXML
     private void acceptedChanges(){
         if(libroValido()){
             libro.setTitulo(txtTitulo.getText());

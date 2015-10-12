@@ -5,7 +5,7 @@
             <url>src/bibliotecaejercicio/MainApp.java</url>
             <bookmark id="5">
                 <name/>
-                <line>116</line>
+                <line>150</line>
                 <key/>
             </bookmark>
         </file>
@@ -14,8 +14,13 @@
         <group>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/helpers/DBHelper.java</file>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Libro.java</file>
+            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Autor.java</file>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/MainApp.java</file>
+            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/helpers/Dialogs.java</file>
+            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/EditarAgregarUsuarioController.java</file>
             <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/BibliotecaViewController.java</file>
+            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/controller/EditarAgregarLibroController.java</file>
+            <file>file:/C:/Users/Omar/Documents/Omar/Programación-proyectos/Java%20Projects/BibliotecaEjercicio/src/bibliotecaejercicio/model/Ejemplar.java</file>
         </group>
     </open-files>
 </project-private>

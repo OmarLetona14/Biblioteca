@@ -137,7 +137,7 @@ public class Libro {
             insertStatement.setString(1, nuevoLibro.getTitulo());
             insertStatement.setString(2, nuevoLibro.getISBN());
             insertStatement.setString(3, nuevoLibro.getEditorial());
-            insertStatement.setString(6, nuevoLibro.getPaginas());
+            insertStatement.setString(4, nuevoLibro.getPaginas());
             
             insertStatement.executeUpdate();
             
@@ -250,8 +250,5 @@ public class Libro {
             return false;
         }
         return true;
-    }
-    
-    
-    
+    }      
 }
