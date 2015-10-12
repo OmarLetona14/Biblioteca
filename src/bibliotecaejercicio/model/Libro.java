@@ -111,12 +111,10 @@ public class Libro {
             while(rs.next()){
                 Libro libro = new Libro();
                 
-                libro.setIdLibro(rs.getString("idLibro"));
                 libro.setTitulo(rs.getString("titulo"));
                 libro.setEditorial(rs.getString("editorial"));
                 libro.setISBN(rs.getString("isbn"));
                 libro.setPaginas(rs.getString("paginas"));
-                libro.autor.setIdAutor("idAutor");
                 libro.autor.setNombre(rs.getString("nombre"));
                 libro.ejemplar.setLocalizacion(rs.getString("localizacion"));
                 libros.add(libro);
@@ -150,7 +148,7 @@ public class Libro {
             insertStatementAutor.executeUpdate();
             
              String insertSQLEjemplar =  "INSERT INTO Ejemplar(localizacion, idLibro) "
-                + "VALUES (?)";
+                + "VALUES (?, ?)";
              
             PreparedStatement insertStatementEjemplar = DBHelper.getConnection().prepareStatement(insertSQLEjemplar);
             
@@ -159,7 +157,7 @@ public class Libro {
             insertStatementEjemplar.executeUpdate();
             
              String insertSQLRelacion =  "INSERT INTO LibroEscrito(idAutor, idLibro) "
-                + "VALUES (?)";
+                + "VALUES (?, ?)";
              
             PreparedStatement insertStatementRelacion = DBHelper.getConnection().prepareStatement(insertSQLRelacion);
             

@@ -22,7 +22,7 @@ public class DBHelper {
     
     private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static final String DB_SERVER = "localhost:1433";
-    private static final String DB_INSTANCE = "SQLEXPRESS";
+    private static final String DB_INSTANCE = "MSSQL";
     private static final String DB_NAME = "Library";
     
     
@@ -33,7 +33,7 @@ public class DBHelper {
     public DBHelper() throws ClassNotFoundException, SQLException{
         Class.forName(DRIVER);
         connection =  DriverManager.getConnection("jdbc:sqlserver://" + DB_SERVER + ";instanceName=" + DB_INSTANCE +";"
-                + "databaseName=" + DB_NAME + ";user= sa" + ";" + "password= 123");
+                + "databaseName=" + DB_NAME + ";user= sa" + ";" + "password= sa");
     }
     
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
@@ -42,6 +42,7 @@ public class DBHelper {
         }
         return instance.connection;
     }
+    
     
 }
 
