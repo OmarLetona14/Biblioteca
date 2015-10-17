@@ -42,7 +42,7 @@
                                  <TableView fx:id="tbvBiblioteca" layoutX="-2.0" prefHeight="336.0" prefWidth="411.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                    <columns>
                                      <TableColumn fx:id="tbcTitulo" prefWidth="100.0" text="Título" />
-                                     <TableColumn fx:id="tbcAutor" prefWidth="159.0" text="Autor" />
+                                     <TableColumn fx:id="tbcAutor" prefWidth="159.0" resizable="false" text="Autor" />
                                        <TableColumn fx:id="tbcEditorial" prefWidth="149.0" text="Editorial" />
                                    </columns>
                                  </TableView>

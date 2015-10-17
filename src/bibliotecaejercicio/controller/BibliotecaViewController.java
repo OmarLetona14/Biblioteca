@@ -63,7 +63,7 @@ public class BibliotecaViewController implements Initializable {
       @Override
     public void initialize(URL url, ResourceBundle rb) {
         tbcTitulo.setCellValueFactory(new PropertyValueFactory<Libro, String>("titulo"));
-        tbcAutor.setCellValueFactory(new PropertyValueFactory<Autor, String>("autor"));
+        tbcAutor.setCellValueFactory(new PropertyValueFactory<Autor, String>("nombre"));
         tbcEditorial.setCellValueFactory(new PropertyValueFactory<Libro, String>("editorial"));
         tbvBiblioteca.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);     
         

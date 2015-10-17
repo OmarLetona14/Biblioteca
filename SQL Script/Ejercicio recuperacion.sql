@@ -85,3 +85,11 @@ VALUES ('DFGDG-25', 1)
 
 INSERT INTO Autor(nombre )
 VALUES ('José Milla')
+
+
+ UPDATE Usuario 
+SET nombre = 1, telefono = 4, direccion = 4
+WHERE idUsuario = 12
+
+DELETE FROM Libro 
+WHERE idLibro = 5

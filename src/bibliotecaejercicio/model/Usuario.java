@@ -115,7 +115,7 @@ public class Usuario {
      
        public static boolean editarUsuario(Usuario nuevoUsuario){
         String updateSQL = "UPDATE Usuario "
-                + " SET nombre = ?, telefono = ?, direccion = ?"
+                + "SET nombre = ?, telefono = ?, direccion = ?"
                 + "WHERE idUsuario = ?";
         
         try{
@@ -139,8 +139,8 @@ public class Usuario {
     }
     
         public static boolean eliminarUsuario(Usuario usuario){
-        String deleteSQL = "DELETE FROM Libro "
-                + "WHERE idLibro = ?";
+        String deleteSQL = "DELETE FROM Usuario "
+                + "WHERE idUsuario = ?";
 
         try{
             PreparedStatement deleteStatement = DBHelper.getConnection().prepareStatement(deleteSQL);

@@ -193,18 +193,22 @@ public class Libro {
             updateStatement.setString(2, nuevoLibro.getEditorial());
             updateStatement.setString(3, nuevoLibro.getPaginas());
             updateStatement.setString(4, nuevoLibro.getISBN());
+            
+            updateStatement.setString(5, nuevoLibro.getIdLibro());
 
             updateStatement.executeUpdate();
             
             PreparedStatement updateStatementAutor = DBHelper.getConnection().prepareStatement(updateSQLAutor);
             
             updateStatementAutor.setString(1, nuevoLibro.getAutor().getNombre());
+            updateStatementAutor.setString(2, nuevoLibro.getAutor().getIdAutor());
 
             updateStatementAutor.executeUpdate();
             
              PreparedStatement updateStatementEjemplar = DBHelper.getConnection().prepareStatement(updateSQLEjemplar);
             
             updateStatementEjemplar.setString(1, nuevoLibro.getEjemplar().getLocalizacion());
+            updateStatementEjemplar.setString(2, nuevoLibro.getIdLibro());
 
             updateStatementEjemplar.executeUpdate();
             
@@ -222,7 +226,7 @@ public class Libro {
                 + "WHERE idLibro = ?";
         
         String deleteSQLRelacion = "DELETE FROM LibroEscrito "
-                + "WHERE idLibro = ?";
+                + "WHERE idLibro = ?, idAutor = ?";
         
         String deleteSQLejemplar = "DELETE FROM Ejemplar "
                 + "WHERE idLibro = ?";
@@ -234,6 +238,7 @@ public class Libro {
             
             PreparedStatement deleteStatementLibroEscrito = DBHelper.getConnection().prepareStatement(deleteSQLRelacion);
             deleteStatementLibroEscrito.setString(1, libro.getIdLibro());
+            deleteStatementLibroEscrito.setString(2, libro.getAutor().getIdAutor());
             
             deleteStatement.executeUpdate();
             
